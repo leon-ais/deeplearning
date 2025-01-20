@@ -1,0 +1,5 @@
+{
+    "model_algorithm": "image_classification",
+    "model_type": "PyTorch",
+    "runtime": "pytorch_2.1.2-cuda_12.1-py_3.9-windows_11-x86_64"
+}

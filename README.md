@@ -32,9 +32,10 @@ You can use preinstalled pip3, which comes with macOS. Alternatively, you can in
 #### Anaconda
 ```Python
 conda install pytorch torchvision torchaudio -c pytorch
-#### pip
+```
+#### pip (recommend)
 ```Python
-pip3 install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
+pip3 install torch torchvision torchaudio
 ```
 #### Building from source
 Building PyTorch with MPS support requires Xcode 13.3.1 or later. You can download the latest public Xcode release on the Mac App Store or the latest beta release on the Mac App Store or the latest beta release on the Apple Developer website. The USE_MPS environment variable controls building PyTorch and includes MPS support.
@@ -57,7 +58,7 @@ tensor([1.], device='mps:0')
 ### 4. Train
 Using command bellow to start mnist training, which can be accelerated by apple silicon m3 supported by PyTorch backends(mps), faster than cpu.
 ```python
-python3 ./train.py --data_url ~/code/mnist/data --train_url ~/code/mnist/out --batch-size 64 --epochs 15
+python3 ./train.py --data_url ../data --train_url ../out --batch-size 64 --epochs 15
 ```
 ### Feedback
 The MPS backend is in the beta phase, and we’re actively addressing issues and fixing bugs. To report an issue, use the GitHub issue tracker with the label “module: mps”.

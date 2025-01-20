@@ -31,8 +31,7 @@ You can use preinstalled pip3, which comes with macOS. Alternatively, you can in
 ### 2. Install
 #### Anaconda
 ```Python
-conda install pytorch torchvision torchaudio -c pytorch-nightly
-```
+conda install pytorch torchvision torchaudio -c pytorch
 #### pip
 ```Python
 pip3 install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu

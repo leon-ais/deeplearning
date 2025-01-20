@@ -21,6 +21,11 @@ x86
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 sh Miniconda3-latest-MacOSX-x86_64.sh
 ```
+Creating an environment to test if it support Apple silicon GPU.
+```shell
+conda create -n m3_torch_mnist python=3.9
+conda activate m3_torch_mnist
+```
 #### pip
 You can use preinstalled pip3, which comes with macOS. Alternatively, you can install it from the Python website or the Homebrew package manager.
 ### 2. Install
@@ -50,5 +55,10 @@ The output should show:
 ```Python
 tensor([1.], device='mps:0')
 ```
-Feedback
+### 4. Train
+Using command bellow to start mnist training, which can be accelerated by apple silicon m3 supported by PyTorch backends(mps), faster than cpu.
+```python
+python3 ./train.py --data_url ~/code/mnist/data --train_url ~/code/mnist/out --batch-size 64 --epochs 15
+```
+### Feedback
 The MPS backend is in the beta phase, and we’re actively addressing issues and fixing bugs. To report an issue, use the GitHub issue tracker with the label “module: mps”.
